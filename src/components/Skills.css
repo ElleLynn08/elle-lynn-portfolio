@@ -1,0 +1,28 @@
+.skills {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 40px 0;
+    font-family: var(--default-font-family)
+  }
+  
+  .skills i {
+    color: var(--branding-color);
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .skills p {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 460px) {
+    .skills i {
+      font-size: 20px;
+    }
+  
+    .skills p {
+      font-size: 12px;
+    }
+  }
