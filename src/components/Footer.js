@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import "./Footer.css"; 
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -22,7 +22,7 @@ function Footer() {
         <a
           href="https://github.com/ElleLynn08"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           title="GitHub"
         >
           <FontAwesomeIcon icon={faSquareGithub} size="2x" />
@@ -30,12 +30,16 @@ function Footer() {
         <a
           href="https://www.linkedin.com/in/elle-lynn-a7a7a1263"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           title="LinkedIn"
         >
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
-        <a href="mailto:ElleLynn08@icloud.com" title="Email">
+        <a
+          href="mailto:ElleLynn08@icloud.com"
+          rel="noopener noreferrer"
+          title="Email"
+        >
           <FontAwesomeIcon icon={faEnvelope} size="2x" />
         </a>
       </div>
@@ -44,18 +48,18 @@ function Footer() {
         <a
           href="https://github.com/ElleLynn08"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           open-sourced.
         </a>
       </p>
       <p className="text-center small-text">
-      © {new Date().getFullYear()} Elle Lynn. All Rights Reserved. Michelle Lynn George.
-
+        © {new Date().getFullYear()} Elle Lynn. All Rights Reserved. Michelle Lynn George.
       </p>
     </footer>
   );
 }
 
 export default Footer;
+
 
