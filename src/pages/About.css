@@ -1,0 +1,13 @@
+.about-container {
+    margin: 40px 0;
+  }
+  
+  .about-container h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-container img {
+    border-radius: 8px;
+  }
+  
+  

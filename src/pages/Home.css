@@ -1,0 +1,17 @@
+.projects {
+    text-align: center;
+    margin: 4rem 0;
+  }
+  
+  .project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .project-cards > * {
+    max-width: 300px; /* Adjust width as needed */
+    flex: 1 1 calc(33% - 2rem); /* Adjust for three cards in a row */
+  }
+    

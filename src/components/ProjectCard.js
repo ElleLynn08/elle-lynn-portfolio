@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "./ProjectCard.css";
 
 function ProjectCard({ image, title, description, link }) {
   return (
@@ -8,9 +10,9 @@ function ProjectCard({ image, title, description, link }) {
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>
-        <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
+        <Link to={link} className="project-link">
           Learn More
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -25,4 +27,5 @@ ProjectCard.propTypes = {
 };
 
 export default ProjectCard;
+
 

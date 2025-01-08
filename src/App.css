@@ -1,7 +1,6 @@
 :root {
   --branding-color: #00eecd;
   --secondary-color: #f2f2f2;
-  --name-font-family: "Satisfy", cursive;
   --heading-font-family: "Playfair Display", serif;
   --default-font-family: "Poppins", sans-serif;
 }
@@ -19,20 +18,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-a {
-  color: #000000;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-
-a:hover {
-  color: var(--branding-color);
-}
-
 .container {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
 

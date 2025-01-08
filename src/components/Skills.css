@@ -1,28 +1,72 @@
 .skills {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin: 40px 0;
-    font-family: var(--default-font-family)
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  color: #272142;
+}
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.fa-icon {
+  font-size: 3rem;
+  color: var(--branding-color);
+  animation: bounce 2s infinite;
+}
+
+.icon p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #272142;
+}
+
+/* Add spin animation for the React icon */
+.spin .fa-icon {
+  animation: spin 3s linear infinite, bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
   }
-  
-  .skills i {
-    color: var(--branding-color);
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 10px;
+  50% {
+    transform: translateY(-10px);
   }
-  
-  .skills p {
-    font-size: 14px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  @media (max-width: 460px) {
-    .skills i {
-      font-size: 20px;
-    }
-  
-    .skills p {
-      font-size: 12px;
-    }
+  to {
+    transform: rotate(360deg);
   }
+}
+
+
+
+
+

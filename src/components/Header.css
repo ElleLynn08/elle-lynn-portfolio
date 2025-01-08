@@ -28,29 +28,26 @@ nav li.active a {
   color: var(--branding-color);
 }
 
-/* Logo adjustments */
 .logo-large {
-  max-width: 240px; /* Increased size */
+  max-width: 240px;
   margin-left: -50px;
 }
 
 .logo-small {
   max-width: 200px;
   display: none;
-margin-left: -50px;
+  margin-left: -50px;
 }
 
 @media (max-width: 1000px) {
   .logo-large {
     display: none;
   }
-
   .logo-small {
     display: block;
   }
 }
 
-/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -62,7 +59,6 @@ margin-left: -50px;
   height: 3px;
   background-color: #272142;
   margin: 5px 0;
-  margin-right:50px;
   transition: all 0.3s ease;
 }
 
@@ -91,6 +87,10 @@ margin-left: -50px;
     display: flex;
   }
 }
+
+
+
+
 
 
 
