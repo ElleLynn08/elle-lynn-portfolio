@@ -1,0 +1,82 @@
+.hero {
+  background: linear-gradient(112deg, rgb(0, 0, 0) 60%, rgb(182, 182, 182) 100%);
+  color: #ffffff;
+  padding: 50px;
+  text-align: left; /* Aligns content to the left */
+  display: flex;
+  flex-direction: row-reverse; /* Moves the image to the left */
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 1200px; /* Keeps the hero content at a manageable width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: var(--default-font-family);
+}
+
+.hero-content {
+  max-width: 60%;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-family: var(--default-font-family); /* Ensures consistency */
+}
+
+.hero-content h2 {
+  font-size: 5rem;
+  color: var(--branding-color); /* Uses branding color */
+  margin: 10px 0;
+  font-family: 'Satisfy', cursive; /* Applies the Satisfy font */
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  font-family: var(--default-font-family); /* Applies the Poppins font */
+}
+
+.hero-content button {
+  background-color: var(--branding-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: var(--default-font-family); /* Ensures button text uses Poppins */
+}
+
+.hero-content button:hover {
+  background-color: #ffffff; /* A hover effect color */
+  color: var(--branding-color); 
+}
+
+.hero img {
+  max-width: 35%; /* Makes the image take up appropriate space */
+  border-radius: 15px;
+  object-fit: cover; /* Keeps the image aspect ratio */
+  display: block;
+  margin-bottom: -50px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse; /* Ensures the image is on top on smaller screens */
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero img {
+    display: none; /* Hides the image on smaller screens */
+  }
+}
+
+
+
+
+  

@@ -1,0 +1,65 @@
+footer {
+    padding: 40px 20px;
+    background: var(--secondary-color);
+    text-align: center;
+    font-family: var(--default-font-family)
+  }
+  
+  footer .contact-box {
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+  
+  footer .social-links a {
+    background: var(--secondary-color);
+    border-radius: 50%;
+    color: var(--branding-color);
+    font-size: 18px;
+    margin: 0 10px;
+    padding: 10px 14px;
+  }
+  
+  footer .social-links a:hover {
+    color: #ffffff;
+    background: var(--branding-color);
+  }
+  
+  footer p {
+    color: #000000;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .small-text {
+    font-size: 12px;
+    color: #6c757d; /* Light gray */
+    margin-top: 10px;
+  }
+  footer a {
+    color: var(--branding-color);
+    text-decoration: none;
+  }
+  
+  footer a:visited {
+    color: var(--branding-color);
+  }
+  .btn-branding {
+    background-color: var(--branding-color);
+    color: #ffffff !important; /* Override any Bootstrap default */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: var(--default-font-family);
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-branding:hover {
+    background-color: #ffffff;
+    color: var(--branding-color) !important;
+    border: 1px solid var(--branding-color);
+  }
+  

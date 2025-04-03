@@ -1,0 +1,206 @@
+.work-container {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.work-title {
+  font-size: 2.5rem;
+  color: var(--branding-color);
+  margin-bottom: 30px;
+}
+
+/* TRUE 2x2 Layout */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 items per row on desktop */
+  gap: 30px;
+  justify-items: center;
+  padding: 2rem 1rem;
+}
+
+/* Responsive: stack into one column on small screens */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*  Card Styling */
+.project-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+}
+
+/*  Video Styling */
+.project-video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+/* Image Styling (if needed) */
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/*  Typography */
+.project-title {
+  font-size: 1.5rem;
+  color: #272142;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Link Styling */
+.project-link {
+  display: inline-block;
+  color: var(--branding-color);
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.project-link:hover {
+  color: #005b4a;
+}
+
+/* ✨ Sparkle Card Magic ✨ */
+.sparkle-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+  padding: 2rem;
+  background: #fdf9f6;
+  border-radius: 12px;
+  animation: fadeInCard 1s ease-in-out;
+  z-index: 1;
+}
+
+/* 🌈 Rotating pastel shimmer */
+.sparkle-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-conic-gradient(from 0deg, #ffccf9, #ccf2ff, #fceabb, #ffccf9);
+  opacity: 0.25;
+  animation: sparkleMove 15s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 🌌 Floating Stardust - now denser & brighter */
+.sparkle-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(#ffffff 2px, transparent 1px),
+                    radial-gradient(#ffffff 2px, transparent 1px);
+  background-size: 20px 20px; /* smaller for denser sparkle */
+  background-position: 0 0, 10px 10px;
+  opacity: 0.6;
+  animation: stardustFloat 25s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ✍️ Content sits above sparkle layers */
+.sparkle-card h3,
+.sparkle-card p {
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6); /* ✨ Glow effect */
+}
+
+/* 💫 Text Styling */
+.sparkle-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #272142;
+  margin-bottom: 1rem;
+}
+
+.sparkle-card p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 80%;
+  line-height: 1.6;
+}
+
+/* ✨ Fade-in animation */
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎠 Pastel shimmer swirl */
+@keyframes sparkleMove {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🌌 Stardust drifting */
+@keyframes stardustFloat {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100px, -100px);
+  }
+}
+@media (max-width: 768px) {
+  .work-container,
+  .about-container,
+  .projects {
+    margin-top: 1rem;
+    padding-top: 0;
+  }
+
+  .work-title,
+  .about-container h1,
+  .home-title {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .hero,
+  .about-section {
+    padding-top: 40px !important; /* just in case */
+  }
+}

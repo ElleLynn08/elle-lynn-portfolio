@@ -1,0 +1,66 @@
+.contact-page {
+    padding: 80px 20px;
+    text-align: center;
+    font-family: var(--default-font-family);
+  }
+  
+  .contact-intro {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .contact-box {
+    background: #f8f8f8;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+  
+  .contact-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .signature-typewriter {
+    font-family: var(--default-font-family);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #00cba9; /* glowing teal */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black; /* the cursor */
+    width: 0;
+    margin: 30px auto 0;
+    text-align: center;
+    animation: typing 4s steps(30, end) forwards, blink 0.7s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 28ch; /* this matches full sentence length */
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  
+  
+  
+  
+  
