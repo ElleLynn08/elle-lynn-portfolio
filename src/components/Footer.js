@@ -13,12 +13,12 @@ function Footer() {
           <p className="text-muted">Let's work together</p>
         </div>
         <div>
-        <a href="mailto:ElleLynn08@icloud.com" title="Email Elle" className="btn btn-branding">
-
+          <a href="/contact" title="Go to Contact Page" className="btn btn-branding">
             Contact me
           </a>
         </div>
       </div>
+
       <div className="social-links d-flex justify-content-center mb-5">
         <a
           href="https://github.com/ElleLynn08"
@@ -44,6 +44,7 @@ function Footer() {
           <FontAwesomeIcon icon={faEnvelope} size="2x" />
         </a>
       </div>
+
       <p className="text-center">
         This portfolio was coded with 🩶 by <b>Elle Lynn</b>, and is{" "}
         <a
@@ -54,6 +55,7 @@ function Footer() {
           open-sourced.
         </a>
       </p>
+
       <p className="text-center small-text">
         © {new Date().getFullYear()} Elle Lynn. All Rights Reserved. Michelle Lynn George.
       </p>
@@ -62,5 +64,6 @@ function Footer() {
 }
 
 export default Footer;
+
 
 
