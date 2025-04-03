@@ -21,10 +21,10 @@ function Footer() {
 
       <div className="social-links d-flex justify-content-center mb-5">
         <a
-          href="https://github.com/ElleLynn08"
+          href="https://github.com/ElleLynn08/elle-lynn-portfolio"
           target="_blank"
           rel="noopener noreferrer"
-          title="GitHub"
+          title="View this portfolio's source code on GitHub"
         >
           <FontAwesomeIcon icon={faSquareGithub} size="2x" />
         </a>
@@ -46,14 +46,19 @@ function Footer() {
       </div>
 
       <p className="text-center">
-        This portfolio was coded with 🩶 by <b>Elle Lynn</b>, and is{" "}
+        This portfolio was coded with 🖤 and a bit of ✨ by <b>Elle Lynn</b>, and is{" "}
         <a
-          href="https://github.com/ElleLynn08"
+          href="https://github.com/ElleLynn08/elle-lynn-portfolio"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopene🖤r noreferrer"
+          title="View this portfolio's source code on GitHub"
         >
           open-sourced.
         </a>
+      </p>
+
+      <p className="text-center small-text">
+        Built with React, hosted on Netlify, and open-sourced on GitHub.
       </p>
 
       <p className="text-center small-text">
@@ -64,6 +69,8 @@ function Footer() {
 }
 
 export default Footer;
+
+
 
 
 
