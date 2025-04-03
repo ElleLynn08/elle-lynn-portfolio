@@ -46,11 +46,13 @@ function Footer() {
       </div>
 
       <p className="text-center">
-        This portfolio was coded with 🖤 and a bit of ✨ by <b>Elle Lynn</b>, and is{" "}
+        This portfolio was coded with{" "}
+        <span role="img" aria-label="black heart">🖤</span> and a bit of{" "}
+        <span role="img" aria-label="sparkles">✨</span> by <b>Elle Lynn</b>, and is{" "}
         <a
           href="https://github.com/ElleLynn08/elle-lynn-portfolio"
           target="_blank"
-          rel="noopene🖤r noreferrer"
+          rel="noopener noreferrer"
           title="View this portfolio's source code on GitHub"
         >
           open-sourced.
@@ -69,6 +71,7 @@ function Footer() {
 }
 
 export default Footer;
+
 
 
 
