@@ -10,7 +10,7 @@ function Contact() {
       </p>
 
       <p className="signature-typewriter">
-        <em>Let’s make something impactful together.</em>
+        <em>Let’s make something impactful.</em>
       </p>
     </div>
   );
