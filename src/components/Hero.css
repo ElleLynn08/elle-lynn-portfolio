@@ -31,6 +31,15 @@
   font-family: 'Satisfy', cursive; /* Applies the Satisfy font */
 }
 
+.subtagline {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: #ccc; /* or your brand accent, e.g., #6ee7b7 */
+  line-height: 1.4;
+}
+
+
 .hero-content p {
   font-size: 1.2rem;
   margin: 15px 0;
