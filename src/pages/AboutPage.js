@@ -6,18 +6,40 @@ function About() {
     <div className="about-container">
       <div className="about-text">
         <h1 className="mb-4">Hi, I’m Elle</h1>
-        <h2 className="mb-4">Engineer with a Creative Soul, a Curious Mind, and a Mission-Driven Heart</h2>
+        <h2 className="mb-4">
+          Trauma-Informed AI Researcher | Builder of Ethical, Human-Aware Systems
+        </h2>
 
         <p className="mb-4">
-          I started my journey as a front-end engineer, but over time, I’ve grown into something more—a creative problem-solver who’s passionate about using technology to make a real difference. I still love crafting intuitive, beautiful user interfaces, but my focus has expanded to include AI, data science, and systems that support public safety and human well-being.
+          My journey began as a front-end developer who loved designing intuitive,
+          beautiful user interfaces. But over time, I realized I was drawn to deeper
+          questions—ones about trust, fairness, and the unseen dynamics that shape
+          human–AI interaction.
         </p>
 
         <p className="mb-4">
-          I'm currently earning my Master’s in Computer Science at Vanderbilt, where I’ve studied Responsible AI, cloud-native computing, microservices, digital forensics, and ethical tech development. My background includes federal service, and I’m especially passionate about projects that combine engineering with real-world impact.
+          Now, I'm focused on building trauma-informed AI systems that don’t just
+          classify data—they care about the people behind it. My research explores
+          how machine learning can recognize emotional states, respond with context
+          awareness, and uphold fairness in high-stakes, real-world environments.
+        </p>
+
+        <p className="mb-4">
+          I'm currently earning my Master’s in Computer Science at Vanderbilt,
+          where I’ve studied Responsible AI, cloud-native computing, microservices,
+          behavioral modeling, and ethical tech development. My background includes
+          federal service, and I’m especially passionate about creating tools that
+          serve public safety, mental health, and ethical innovation.
         </p>
 
         <p className="mb-5">
-          Whether I’m building, researching, or collaborating, I show up with empathy, grit, and a deep sense of purpose. I believe the best tech doesn’t just work—it helps. It protects. It empowers. That’s the kind of work I’m here to do.
+          Whether I’m designing systems, conducting research, or collaborating across
+          disciplines, I bring empathy, clarity, and a mission-driven heart to
+          everything I build.
+        </p>
+
+        <p className="mb-5">
+          If you believe technology should heal—not just work—I’d love to connect.
         </p>
 
         <a className="btn-branding" href="/work" title="See My Projects">
@@ -37,6 +59,7 @@ function About() {
 }
 
 export default About;
+
 
 
 
