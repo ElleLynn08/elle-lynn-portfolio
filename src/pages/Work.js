@@ -35,6 +35,9 @@ function Work() {
               <p><strong>What I Learned:</strong> Resilience in solo dev, rapid deployment, container orchestration</p>
             </div>
           </details>
+          <a href="https://github.com/ElleLynn08/forks-n-filters" target="_blank" rel="noopener noreferrer" className="btn-github">
+            View on GitHub
+          </a>
         </div>
 
         {/* Atmospheric Weather App */}
@@ -68,6 +71,9 @@ function Work() {
               </ul>
             </div>
           </details>
+          <a href="https://github.com/ElleLynn08/weather-app-final" target="_blank" rel="noopener noreferrer" className="btn-github">
+            View on GitHub
+          </a>
         </div>
 
         {/* Solitaire Game */}
@@ -92,7 +98,10 @@ function Work() {
 
         {/* Fake News Bias Audit */}
         <div className="project-card">
-          <img className="project-image" src="images/fake_news_audit.png" alt="Fake News Bias Audit" />
+          <video className="project-video" controls>
+            <source src="videos/FakeNews_Bias.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <h3 className="project-title">Fake News Bias Audit</h3>
           <p className="project-description">
             A Responsible AI project using SHAP to reveal bias in fake vs. real news classification.
@@ -119,7 +128,10 @@ function Work() {
 
         {/* Turtle Graphics Design Studio */}
         <div className="project-card">
-          <img className="project-image" src="images/turtle_graphics.png" alt="Turtle Graphics Design Studio" />
+          <video className="project-video" controls>
+            <source src="videos/RunAll_TurtleGraphics.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <h3 className="project-title">Turtle Graphics Design Studio</h3>
           <p className="project-description">
             A WebGME-based modeling tool for creating Python turtle graphics visually. Includes code generation, plugin execution, and loop/logic design.
@@ -164,9 +176,6 @@ function Work() {
               <p><strong>What I Learned:</strong> Reactive streams, microservice architecture, and full-stack test orchestration in Java.</p>
             </div>
           </details>
-          <a href="https://github.com/ElleLynn08/microservices-recommender" target="_blank" rel="noopener noreferrer" className="btn-github">
-            View on GitHub
-          </a>
         </div>
 
         {/* Coming Soon */}
@@ -177,7 +186,7 @@ function Work() {
           <p className="project-description">
             I’m currently building a trauma-informed, multimodal AI framework to support safety, fairness, and emotional intelligence in high-stakes environments.  
             <br /><br />
-            This work will be submitted for publication in 2025 and combines behavioral modeling, SMT verification, and explainability — stay tuned for the upcoming repo, demo, and research article.
+            This work will be submitted for publication in 2025 and 2026 and combines behavioral modeling, SMT verification, and explainability — stay tuned for the upcoming repo, demo, and research article.
           </p>
         </div>
       </section>
@@ -186,6 +195,7 @@ function Work() {
 }
 
 export default Work;
+
 
 
 
