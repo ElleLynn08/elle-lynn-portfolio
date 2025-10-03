@@ -33,6 +33,9 @@ function Work() {
               </ul>
               <p><strong>Challenges:</strong> Deployment on AWS failed—pivoted to Google Cloud Run successfully.</p>
               <p><strong>What I Learned:</strong> Resilience in solo dev, rapid deployment, container orchestration</p>
+              <a href="/documents/ForksNFilters_Report.pdf" target="_blank" rel="noopener noreferrer" className="btn-pdf">
+                View Final Report (PDF)
+              </a>
             </div>
           </details>
           <a href="https://github.com/ElleLynn08/forks-n-filters" target="_blank" rel="noopener noreferrer" className="btn-github">
@@ -69,6 +72,9 @@ function Work() {
                 <li>Web-based search history</li>
                 <li>Live deployment with full frontend</li>
               </ul>
+              <a href="/documents/AtmosphericWeather_FinalReport.pdf" target="_blank" rel="noopener noreferrer" className="btn-pdf">
+                View Final Report (PDF)
+              </a>
             </div>
           </details>
           <a href="https://github.com/ElleLynn08/weather-app-final" target="_blank" rel="noopener noreferrer" className="btn-github">
@@ -119,6 +125,9 @@ function Work() {
                 <li>Bias surfacing across political, religious, and emotional categories</li>
               </ul>
               <p><strong>What I Learned:</strong> How model predictions reflect not just accuracy, but assumptions — and how to interpret them responsibly.</p>
+              <a href="/documents/FakeNewsBias_Assignment6_7.pdf" target="_blank" rel="noopener noreferrer" className="btn-pdf">
+                View Final Report (PDF)
+              </a>
             </div>
           </details>
           <a href="https://github.com/ElleLynn08/fake-news-bias-audit" target="_blank" rel="noopener noreferrer" className="btn-github">
@@ -195,6 +204,7 @@ function Work() {
 }
 
 export default Work;
+
 
 
 
