@@ -4,7 +4,10 @@ import "./Work.css";
 function Work() {
   return (
     <main className="work-container">
-      <h1 className="work-title">My Projects</h1>
+      <h1 className="work-title">Work With Heart, Code With Purpose</h1>
+      <p className="work-subtitle">
+        Explore a portfolio of creative tools, research-driven systems, and AI projects built with empathy and ethical design at their core.
+      </p>
 
       <section className="project-grid">
         {/* Forks n' Filters */}
@@ -165,12 +168,25 @@ function Work() {
             View on GitHub
           </a>
         </div>
+
+        {/* Coming Soon */}
+        <div className="project-card sparkle-card">
+          <h3 className="project-title">
+            More Projects Coming Soon <span role="img" aria-label="sparkles">✨</span>
+          </h3>
+          <p className="project-description">
+            I’m currently building a trauma-informed, multimodal AI framework to support safety, fairness, and emotional intelligence in high-stakes environments.  
+            <br /><br />
+            This work will be submitted for publication in 2025 and combines behavioral modeling, SMT verification, and explainability — stay tuned for the upcoming repo, demo, and research article.
+          </p>
+        </div>
       </section>
     </main>
   );
 }
 
 export default Work;
+
 
 
 
