@@ -57,7 +57,7 @@ I'm a front-end engineer with a creative soul, a curious mind, and a mission-dri
 
 Want to collaborate or say hi?
 
-- ✉️ Email: [ElleLynn08@icloud.com](mailto:ElleLynn08@icloud.com)
+- ✉️ Email: [ElleLynn08@icloud.com](mailto:Elle.Lynn.Research@icloud.com)
 - 💼 LinkedIn: [linkedin.com/in/elle-lynn-a7a7a1263](https://www.linkedin.com/in/elle-lynn-a7a7a1263/)
 - 🖥️ GitHub: [github.com/ElleLynn08](https://github.com/ElleLynn08)
 
