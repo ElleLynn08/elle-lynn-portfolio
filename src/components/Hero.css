@@ -63,13 +63,13 @@
 }
 
 .hero img {
-  max-width: 38%; 
+  max-width: 38%;
   border-radius: 15px;
   object-fit: cover;
   display: block;
-  margin-left: 0; /* no unwanted shift */
-  margin-right: 40px; /* keeps text visually separated */
-  align-self: flex-start; /* pins image top-aligned with text */
+  margin-right: 40px;
+  align-self: flex-start;
+  transform: translateY(-10px) translateX(-10px);
 }
 
 @media (max-width: 768px) {
