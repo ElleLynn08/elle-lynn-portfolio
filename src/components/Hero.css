@@ -4,7 +4,7 @@
   padding: 50px;
   text-align: left; /* Aligns content to the left */
   display: flex;
-  flex-direction: row-reverse; /* Moves the image to the left */
+  flex-direction: row-reverse; /* Keeps image on the left */
   justify-content: space-between;
   align-items: center;
   border-radius: 15px;
@@ -63,11 +63,13 @@
 }
 
 .hero img {
-  max-width: 35%; /* Makes the image take up appropriate space */
+  max-width: 38%; 
   border-radius: 15px;
-  object-fit: cover; /* Keeps the image aspect ratio */
+  object-fit: cover;
   display: block;
-  margin-bottom: -50px;
+  margin-left: 0; /* no unwanted shift */
+  margin-right: 40px; /* keeps text visually separated */
+  align-self: flex-start; /* pins image top-aligned with text */
 }
 
 @media (max-width: 768px) {
