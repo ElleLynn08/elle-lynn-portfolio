@@ -5,7 +5,17 @@ import ProjectCard from "../components/ProjectCard";
 import "./Home.css";
 
 function Home() {
-  //  Scroll-triggered fade-in animation for sections + cards
+  // --- Safari / iOS visibility fallback ---
+  useEffect(() => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+      document.querySelectorAll(".project-card-wrapper").forEach((card) => {
+        card.classList.add("force-visible");
+      });
+    }
+  }, []);
+
+  // --- Scroll-triggered fade-in animation for sections + cards ---
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,48 +45,58 @@ function Home() {
       <Skills />
 
       {/* Featured Research Section */}
-<section className="featured-research scroll-fade">
-  <h2>Featured Research</h2>
-  <div className="featured-content">
-    <img
-      src="images/poster_haunting_problem.png"
-      alt="Poster of The Haunting Problem — first paper in the Trauma-Aware AI Trilogy"
-      className="featured-image"
-    />
-    <div className="featured-text scroll-stagger delay-1">
-      <h3>Trauma-Aware AI Trilogy</h3>
-      <p>
-        A trauma-informed, multimodal AI framework that bridges behavioral modeling,
-        symbolic verification, and explainable AI to advance emotional safety and fairness
-        in high-stakes environments.
-      </p>
-      <p>
-        <strong>Published so far:</strong><br />
-        • <em>The Haunting Problem: Recognizing Semantic Absence in Trauma-Aware AI</em> —{" "}
-        <a
-          href="https://doi.org/10.5281/zenodo.17578153"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Zenodo DOI 10.5281/zenodo.17578153
-        </a>
-        <br />
-        • <em>Poster: The Haunting Problem — Recognizing Semantic Absence in Trauma-Aware AI</em> —{" "}
-        <a
-          href="https://doi.org/10.5281/zenodo.17584658"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Zenodo DOI 10.5281/zenodo.17584658
-        </a>
-      </p>
-      <a href="/work" className="btn-learn-more scroll-stagger delay-2">
-        Explore the Trilogy
-      </a>
-    </div>
-  </div>
-</section>
-
+      <section className="featured-research scroll-fade">
+        <h2>Featured Research</h2>
+        <div className="featured-content">
+          <img
+            src="images/poster_haunting_problem.png"
+            alt="Poster of The Haunting Problem — first paper in the Trauma-Aware AI Trilogy"
+            className="featured-image"
+          />
+          <div className="featured-text scroll-stagger delay-1">
+            <h3>Trauma-Aware AI Trilogy</h3>
+            <p>
+              A trauma-informed, multimodal AI framework that bridges behavioral
+              modeling, symbolic verification, and explainable AI to advance
+              emotional safety and fairness in high-stakes environments.
+            </p>
+            <p>
+              <strong>Published so far:</strong>
+              <br />
+              •{" "}
+              <em>
+                The Haunting Problem: Recognizing Semantic Absence in
+                Trauma-Aware AI
+              </em>{" "}
+              —{" "}
+              <a
+                href="https://doi.org/10.5281/zenodo.17578153"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zenodo DOI 10.5281/zenodo.17578153
+              </a>
+              <br />
+              •{" "}
+              <em>
+                Poster: The Haunting Problem — Recognizing Semantic Absence in
+                Trauma-Aware AI
+              </em>{" "}
+              —{" "}
+              <a
+                href="https://doi.org/10.5281/zenodo.17584658"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zenodo DOI 10.5281/zenodo.17584658
+              </a>
+            </p>
+            <a href="/work" className="btn-learn-more scroll-stagger delay-2">
+              Explore the Trilogy
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Projects Section */}
       <section className="projects scroll-fade">
@@ -146,6 +166,7 @@ function Home() {
 }
 
 export default Home;
+
 
 
 

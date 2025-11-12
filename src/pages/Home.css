@@ -41,18 +41,20 @@
   transition: none;
 }
 
-/* iPhones & iPads using Safari: instantly visible and painted */
-@supports (-webkit-touch-callout: none) {
+/* iPhones & iPads using Safari: force instant visibility + paint */
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
   .project-card-wrapper {
     opacity: 1 !important;
     transform: none !important;
+    -webkit-transform: none !important;
     transition: none !important;
     animation: none !important;
     will-change: auto !important;
+    backface-visibility: visible !important;
   }
 }
 
-/* ✨ Desktop & hover-capable devices: fade and bounce */
+/*  Desktop & hover-capable devices: fade and bounce */
 @media (hover: hover) and (min-width: 769px) {
   .project-card-wrapper {
     opacity: 0;
@@ -73,7 +75,18 @@
   }
 }
 
-/* Project Links Hover */
+/* Fallback: iOS Safari + JS "force-visible" helper */
+.force-visible {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+  -webkit-transform: none !important;
+}
+
+/* ===========================
+   Project Links Hover
+=========================== */
 .project-card a {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -262,6 +275,7 @@
     overflow: visible;
   }
 }
+
 
 
 
