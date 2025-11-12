@@ -3,7 +3,7 @@
 }
 
 /* ===========================
-   Project Section Layout
+   Project Section Layout 
 =========================== */
 .projects {
   text-align: center;
@@ -16,18 +16,20 @@
   align-items: stretch;
   flex-wrap: wrap;
   gap: 2rem;
-  max-width: 1100px;   /* contains width so rows break cleanly */
+  max-width: 1100px;
   margin: 0 auto;
+  overflow: visible;           /* fixes iOS white gap issue */
+  min-height: 200px;           /* ensures cards never collapse on mobile */
 }
 
-/* True grid with animated wrappers */
 .project-card-wrapper {
   flex: 1 1 calc(33.333% - 2rem);
-  max-width: 340px;      /* wider than 300 so cards aren’t skinny */
+  max-width: 340px;
   min-width: 280px;
   box-sizing: border-box;
-  display: flex;         /* centers child card */
+  display: flex;
   justify-content: center;
+  align-items: stretch;        /* consistent height */
   opacity: 0;
   transform: translateY(40px) scale(0.98);
   transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
@@ -38,16 +40,17 @@
   transform: translateY(0) scale(1);
 }
 
-/* Gentle pop on hover */
+/* Gentle bounce pop */
 .project-card-wrapper.in-view:hover {
   transform: scale(1.02);
   transition: transform 0.25s ease;
 }
 
-/* Links inside cards */
+/* Project Links Hover Effect */
 .project-card a {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
+
 .project-card a:hover {
   color: var(--accent-teal);
   text-shadow: 0 0 8px rgba(0, 238, 205, 0.5);
@@ -56,7 +59,7 @@
 }
 
 /* ===========================
-   Featured Research Section
+   Featured Research Section (Now Floating + Centered)
 =========================== */
 .featured-research {
   margin: 6rem auto 4rem;
@@ -66,12 +69,11 @@
   border-radius: 12px;
   padding: 2.5rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-
-  /* float + bounce on the whole card */
   opacity: 0;
   transform: translateY(40px) scale(0.96);
   transition: opacity 1s ease-out, transform 1s cubic-bezier(0.22, 1.28, 0.36, 1);
 }
+
 .featured-research.in-view {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -87,24 +89,23 @@
 .featured-content {
   display: flex;
   align-items: center;
-  justify-content: center; /* centers poster */
+  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
 .featured-image {
   flex: 1;
-  max-width: 520px;     /* a bit larger on desktop */
+  max-width: 520px;
   width: 100%;
   display: block;
-  margin: 0 auto;       /* center the poster */
+  margin: 0 auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-  /* breathe-in as it appears */
   transform: scale(1.02);
   transition: transform 0.6s ease-in-out;
 }
+
 .featured-research.in-view .featured-image {
   transform: scale(1);
 }
@@ -115,6 +116,7 @@
   color: #444;
   line-height: 1.6;
 }
+
 .featured-text h3 {
   color: #272142;
   font-size: 1.5rem;
@@ -122,7 +124,7 @@
 }
 
 /* ===========================
-   Explore Button
+   Explore Button (Inverted Hover)
 =========================== */
 .btn-learn-more {
   display: inline-block;
@@ -136,28 +138,31 @@
   font-weight: 600;
   transition: all 0.25s ease;
 }
+
 .btn-learn-more:hover {
-  background: transparent;          /* invert */
+  background: transparent;
   color: var(--accent-teal);
   border-color: var(--accent-teal);
-  box-shadow: 0 8px 18px rgba(0, 238, 205, 0.2);
+  box-shadow: 0 8px 18px rgba(0, 238, 205, 0.25);
   transform: scale(1.05);
 }
 
 /* ===========================
-   Scroll Fade (shared)
+   Global Scroll Fade
 =========================== */
 .scroll-fade {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease-out;
 }
+
 .scroll-fade.in-view {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* ===========================
-   Staggered Scroll Animation for Featured Research
+   Staggered Animation for Featured Research
 =========================== */
 .scroll-stagger {
   opacity: 0;
@@ -170,7 +175,6 @@
   transform: translateY(0);
 }
 
-/* Smooth sequential timing */
 .delay-1 {
   transition-delay: 0.3s;
 }
@@ -181,9 +185,8 @@
 /* ===========================
    Responsive Layout
 =========================== */
-/* Tablet */
 @media (max-width: 1200px) {
-  /* Switch to 2 across so cards breathe */
+  /* Switch to 2 across */
   .project-card-wrapper {
     flex: 1 1 calc(50% - 2rem);
     max-width: 480px;
@@ -197,15 +200,18 @@
     margin: 4rem 1rem;
     max-width: 95%;
   }
+
   .featured-content {
     flex-direction: column;
     gap: 2rem;
   }
+
   .featured-image {
     max-width: 90%;
     height: auto;
     object-fit: contain;
   }
+
   .featured-text {
     margin-top: 1.5rem;
     max-width: 90%;
@@ -217,8 +223,19 @@
   .project-card-wrapper {
     flex: 1 1 100%;
     max-width: 92%;
+    min-height: 400px;   /* ensures cards render fully on mobile */
+  }
+
+  .projects {
+    margin: 3rem 0 2rem;
+  }
+
+  .project-cards {
+    gap: 1.5rem;
+    overflow: visible;
   }
 }
+
 
 
 
