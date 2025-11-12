@@ -25,6 +25,7 @@
   will-change: transform, opacity;
 }
 
+/* Default paint (mobile-safe, immediate) */
 .project-card-wrapper {
   flex: 1 1 calc(33.333% - 2rem);
   max-width: 340px;
@@ -35,16 +36,19 @@
   align-items: stretch;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
-  transform: translateZ(0); /* added standard property */
+  transform: translateZ(0);
+  opacity: 1; /* visible immediately */
+  transition: none;
 }
 
-/* ✅ iPhones & iPads using Safari: instantly visible */
+/* iPhones & iPads using Safari: instantly visible and painted */
 @supports (-webkit-touch-callout: none) {
   .project-card-wrapper {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;
+    will-change: auto !important;
   }
 }
 
@@ -53,8 +57,9 @@
   .project-card-wrapper {
     opacity: 0;
     transform: translateY(40px) scale(0.98);
-    transition: opacity 0.9s ease-out,
-                transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
+    transition: opacity 0.8s ease-out,
+                transform 0.8s cubic-bezier(0.22, 1.28, 0.36, 1);
+    will-change: transform, opacity;
   }
 
   .project-card-wrapper.in-view {
@@ -257,6 +262,7 @@
     overflow: visible;
   }
 }
+
 
 
 
