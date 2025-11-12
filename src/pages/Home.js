@@ -5,18 +5,20 @@ import ProjectCard from "../components/ProjectCard";
 import "./Home.css";
 
 function Home() {
-  // --- Safari / iOS visibility fallback ---
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    if (isIOS) {
-      document.querySelectorAll(".project-card-wrapper").forEach((card) => {
-        card.classList.add("force-visible");
-      });
-    }
-  }, []);
 
-  // --- Scroll-triggered fade-in animation for sections + cards ---
-  useEffect(() => {
+    if (isMobile || isIOS) {
+      // --- Force instant visibility for mobile/iOS ---
+      document.querySelectorAll(".scroll-fade, .project-card-wrapper").forEach((el) => {
+        el.classList.add("force-visible");
+        el.classList.add("in-view");
+      });
+      return; // Skip observer entirely
+    }
+
+    // --- Desktop / iPad fade-in animations ---
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,7 +29,7 @@ function Home() {
           }
         });
       },
-      { threshold: 0.2 } // triggers when 20% of element is visible
+      { threshold: 0.2 }
     );
 
     const targets = document.querySelectorAll(".scroll-fade");
@@ -38,13 +40,9 @@ function Home() {
 
   return (
     <main>
-      {/* Hero Section */}
       <Hero />
-
-      {/* Skills Section */}
       <Skills />
 
-      {/* Featured Research Section */}
       <section className="featured-research scroll-fade">
         <h2>Featured Research</h2>
         <div className="featured-content">
@@ -98,7 +96,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section className="projects scroll-fade">
         <h2>My Projects</h2>
         <div className="project-cards">
@@ -166,6 +163,7 @@ function Home() {
 }
 
 export default Home;
+
 
 
 

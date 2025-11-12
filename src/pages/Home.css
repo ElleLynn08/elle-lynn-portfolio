@@ -127,20 +127,25 @@
   font-size: 2rem;
 }
 
+/* ===========================
+   Featured Research Layout Fix
+=========================== */
 .featured-content {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .featured-image {
-  flex: 1;
-  max-width: 520px;
-  width: 100%;
-  display: block;
-  margin: 0 auto;
+  flex: 1 1 420px;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transform: scale(1.02);
@@ -152,7 +157,10 @@
 }
 
 .featured-text {
-  flex: 1;
+  flex: 1 1 380px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
   font-size: 1rem;
   color: #444;
   line-height: 1.6;
@@ -162,6 +170,27 @@
   color: #272142;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+}
+
+/* Stack cleanly on mobile */
+@media (max-width: 768px) {
+  .featured-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .featured-image {
+    width: 90%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  .featured-text {
+    width: 90%;
+    max-width: 480px;
+    text-align: center;
+  }
 }
 
 /* ===========================
@@ -274,7 +303,14 @@
     gap: 1.5rem;
     overflow: visible;
   }
+
+  .featured-research {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
+
 
 
 
