@@ -42,7 +42,7 @@
   animation: cardFadeIn 0.8s ease-out both;
 }
 
-/* Subtle bounce in */
+/* Subtle bounce in (mobile/tablet load) */
 @keyframes cardFadeIn {
   0% {
     opacity: 0;
@@ -62,8 +62,9 @@
   .project-card-wrapper {
     opacity: 0;
     transform: translateY(40px) scale(0.98);
-    animation: none;
-    transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
+    animation: none; /* turn off load animation, use scroll instead */
+    transition: opacity 0.9s ease-out,
+                transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
   }
   .project-card-wrapper.in-view {
     opacity: 1;
@@ -71,7 +72,7 @@
   }
 }
 
-/* Gentle pop on hover */
+/* Gentle pop on hover (when visible) */
 .project-card-wrapper.in-view:hover {
   transform: scale(1.02);
   transition: transform 0.25s ease;
@@ -101,9 +102,9 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   opacity: 0;
   transform: translateY(40px) scale(0.96);
-  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.22, 1.28, 0.36, 1);
+  transition: opacity 1s ease-out,
+              transform 1s cubic-bezier(0.22, 1.28, 0.36, 1);
 }
-
 .featured-research.in-view {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -119,17 +120,17 @@
 .featured-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* centers poster */
   gap: 2rem;
   flex-wrap: wrap;
 }
 
 .featured-image {
   flex: 1;
-  max-width: 520px;
+  max-width: 520px;     /* a bit larger on desktop */
   width: 100%;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto;       /* center the poster */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transform: scale(1.02);
@@ -167,7 +168,7 @@
   transition: all 0.25s ease;
 }
 .btn-learn-more:hover {
-  background: transparent;
+  background: transparent;          /* invert */
   color: var(--accent-teal);
   border-color: var(--accent-teal);
   box-shadow: 0 8px 18px rgba(0, 238, 205, 0.25);
@@ -175,7 +176,7 @@
 }
 
 /* ===========================
-   Scroll Fade (shared)
+   Scroll Fade (shared util)
 =========================== */
 .scroll-fade {
   opacity: 0;
@@ -206,11 +207,13 @@
    Responsive Layout
 =========================== */
 @media (max-width: 1200px) {
+  /* Switch to 2 across */
   .project-card-wrapper {
     flex: 1 1 calc(50% - 2rem);
     max-width: 480px;
   }
 }
+
 @media (max-width: 1024px) {
   .featured-research {
     text-align: center;
@@ -232,6 +235,7 @@
     max-width: 90%;
   }
 }
+
 @media (max-width: 768px) {
   .project-card-wrapper {
     flex: 1 1 100%;
@@ -246,6 +250,7 @@
     overflow: visible;
   }
 }
+
 
 
 
