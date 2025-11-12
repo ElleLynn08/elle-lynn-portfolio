@@ -1,59 +1,61 @@
-.projects {
-    text-align: center;
-    margin: 4rem 0;
-  }
-  
-  .project-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .project-cards > * {
-    max-width: 300px; /* Adjust width as needed */
-    flex: 1 1 calc(33% - 2rem); /* Adjust for three cards in a row */
-  }
+:root {
+  --accent-teal: #00eecd;
+}
 
-  .project-card a {
+/* ===========================
+   Project Section Layout
+=========================== */
+.projects {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.project-cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1100px;   /* contains width so rows break cleanly */
+  margin: 0 auto;
+}
+
+/* True grid with animated wrappers */
+.project-card-wrapper {
+  flex: 1 1 calc(33.333% - 2rem);
+  max-width: 340px;      /* wider than 300 so cards aren’t skinny */
+  min-width: 280px;
+  box-sizing: border-box;
+  display: flex;         /* centers child card */
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
+}
+
+.project-card-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Gentle pop on hover */
+.project-card-wrapper.in-view:hover {
+  transform: scale(1.02);
+  transition: transform 0.25s ease;
+}
+
+/* Links inside cards */
+.project-card a {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
 .project-card a:hover {
-  color: #00eecd;
+  color: var(--accent-teal);
   text-shadow: 0 0 8px rgba(0, 238, 205, 0.5);
-}
-
-
-  .project-card a:hover {
-  color: #00eecd;
   text-decoration: underline;
-  text-decoration-color: #00eecd;
-  transition: all 0.3s ease;
+  text-decoration-color: var(--accent-teal);
 }
 
-  @media (max-width: 768px) {
-    .work-container,
-    .about-container,
-    .projects {
-      margin-top: 1rem;
-      padding-top: 0;
-    }
-  
-    .work-title,
-    .about-container h1,
-    .home-title {
-      margin-top: 0;
-      padding-top: 0;
-    }
-  
-    .hero,
-    .about-section {
-      padding-top: 40px !important; 
-    }
-    
-  }
-  /* ===========================
+/* ===========================
    Featured Research Section
 =========================== */
 .featured-research {
@@ -64,7 +66,15 @@
   border-radius: 12px;
   padding: 2.5rem;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  animation: fadeIn 0.8s ease-in;
+
+  /* float + bounce on the whole card */
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.22, 1.28, 0.36, 1);
+}
+.featured-research.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .featured-research h2 {
@@ -77,16 +87,26 @@
 .featured-content {
   display: flex;
   align-items: center;
+  justify-content: center; /* centers poster */
   gap: 2rem;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .featured-image {
   flex: 1;
-  max-width: 420px;
+  max-width: 520px;     /* a bit larger on desktop */
+  width: 100%;
+  display: block;
+  margin: 0 auto;       /* center the poster */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  /* breathe-in as it appears */
+  transform: scale(1.02);
+  transition: transform 0.6s ease-in-out;
+}
+.featured-research.in-view .featured-image {
+  transform: scale(1);
 }
 
 .featured-text {
@@ -95,53 +115,112 @@
   color: #444;
   line-height: 1.6;
 }
-
 .featured-text h3 {
   color: #272142;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
+/* ===========================
+   Explore Button
+=========================== */
 .btn-learn-more {
   display: inline-block;
   margin-top: 1.2rem;
   padding: 0.6rem 1.2rem;
   background-color: var(--branding-color);
   color: #fff;
+  border: 2px solid var(--branding-color);
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
-
 .btn-learn-more:hover {
-  background-color: #005b4a;
-  transform: scale(1.03);
+  background: transparent;          /* invert */
+  color: var(--accent-teal);
+  border-color: var(--accent-teal);
+  box-shadow: 0 8px 18px rgba(0, 238, 205, 0.2);
+  transform: scale(1.05);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ===========================
+   Scroll Fade (shared)
+=========================== */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+.scroll-fade.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===========================
+   Staggered Scroll Animation for Featured Research
+=========================== */
+.scroll-stagger {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-fade.in-view .scroll-stagger {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth sequential timing */
+.delay-1 {
+  transition-delay: 0.3s;
+}
+.delay-2 {
+  transition-delay: 0.6s;
+}
+
+/* ===========================
+   Responsive Layout
+=========================== */
+/* Tablet */
+@media (max-width: 1200px) {
+  /* Switch to 2 across so cards breathe */
+  .project-card-wrapper {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 480px;
   }
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .featured-research {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 4rem 1rem;
+    max-width: 95%;
+  }
   .featured-content {
     flex-direction: column;
-    text-align: center;
+    gap: 2rem;
   }
-
+  .featured-image {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+  }
   .featured-text {
     margin-top: 1.5rem;
-  }
-
-  .featured-image {
     max-width: 90%;
   }
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-card-wrapper {
+    flex: 1 1 100%;
+    max-width: 92%;
+  }
+}
+
+
+
+
+
