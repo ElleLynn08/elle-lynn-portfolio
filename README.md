@@ -43,7 +43,7 @@ git clone git@github.com:ElleLynn08/elle-lynn-portfolio.git
 cd elle-lynn-portfolio
 npm install
 npm start
-
+```
 
 ## 📬 Contact
 
