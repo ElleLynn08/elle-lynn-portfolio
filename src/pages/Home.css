@@ -3,7 +3,7 @@
 }
 
 /* ===========================
-   Project Section Layout
+   Project Section Layout 
 =========================== */
 .projects {
   text-align: center;
@@ -35,10 +35,11 @@
   align-items: stretch;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0);
+  transform: translateZ(0); /* added standard property */
 }
 
-/* Phones: visible instantly (no fade or animation) */
-@media (max-width: 768px) {
+/* ✅ iPhones & iPads using Safari: instantly visible */
+@supports (-webkit-touch-callout: none) {
   .project-card-wrapper {
     opacity: 1 !important;
     transform: none !important;
@@ -47,22 +48,36 @@
   }
 }
 
-/* Tablets + Desktop: scroll fade enabled */
-@media (min-width: 769px) {
+/* ✨ Desktop & hover-capable devices: fade and bounce */
+@media (hover: hover) and (min-width: 769px) {
   .project-card-wrapper {
     opacity: 0;
     transform: translateY(40px) scale(0.98);
     transition: opacity 0.9s ease-out,
                 transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
   }
+
   .project-card-wrapper.in-view {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
   .project-card-wrapper.in-view:hover {
     transform: scale(1.02);
     transition: transform 0.25s ease;
   }
+}
+
+/* Project Links Hover */
+.project-card a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.project-card a:hover {
+  color: var(--accent-teal);
+  text-shadow: 0 0 8px rgba(0, 238, 205, 0.5);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-teal);
 }
 
 /* ===========================
@@ -156,7 +171,7 @@
 }
 
 /* ===========================
-   Scroll Fade (shared util)
+   Scroll Fade (shared)
 =========================== */
 .scroll-fade {
   opacity: 0;
@@ -183,8 +198,13 @@
   transform: translateY(0);
 }
 
-.delay-1 { transition-delay: 0.3s; }
-.delay-2 { transition-delay: 0.6s; }
+.delay-1 {
+  transition-delay: 0.3s;
+}
+
+.delay-2 {
+  transition-delay: 0.6s;
+}
 
 /* ===========================
    Responsive Layout
@@ -237,6 +257,8 @@
     overflow: visible;
   }
 }
+
+
 
 
 
