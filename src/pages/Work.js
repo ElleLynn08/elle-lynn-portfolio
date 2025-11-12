@@ -10,6 +10,71 @@ function Work() {
       </p>
 
       <section className="project-grid">
+
+        {/* Trauma-Aware AI Trilogy */}
+        <div className="project-card">
+          <img
+            className="project-image"
+            src="images/poster_haunting_problem.png"
+            alt="Published poster introducing The Haunting Problem — the first verified phase of the Trauma-Aware AI Trilogy."
+            title="Published poster introducing The Haunting Problem — the first verified phase of the Trauma-Aware AI Trilogy."
+          />
+          <h3 className="project-title">Trauma-Aware AI Trilogy</h3>
+          <p className="project-description">
+            A trauma-informed, multimodal AI framework uniting behavioral modeling, symbolic verification, and explainable AI to
+            advance emotional safety and fairness in high-stakes environments.
+          </p>
+
+          <details>
+            <summary className="read-more">More Details</summary>
+            <div className="details-body">
+              <p>
+                <strong>Overview:</strong> This ongoing trilogy formalizes empathy as a verifiable safety property in AI systems.
+                It integrates multimodal datasets (text, audio, and microexpressions) with fuzzy-logic calibration and Z3 symbolic verification.
+              </p>
+              <p>
+                <strong>Published so far:</strong><br />
+                • <em>The Haunting Problem: Recognizing Semantic Absence in Trauma-Aware AI</em> —
+                <a
+                  href="https://doi.org/10.5281/zenodo.17578153"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}Zenodo DOI 10.5281/zenodo.17578153
+                </a><br />
+                • <em>Poster: The Haunting Problem — Recognizing Semantic Absence in Trauma-Aware AI</em> —
+                <a
+                  href="https://doi.org/10.5281/zenodo.17584658"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {" "}Zenodo DOI 10.5281/zenodo.17584658
+                </a>
+              </p>
+              <p>
+                <strong>In Progress:</strong><br />
+                • <em>Recognizing the Unseen: A Verified, Multimodal Framework for Trauma-Informed AI</em><br />
+                • <em>Empathy as Verification: Formalizing Emotional Safety through Symbolic Logic</em>
+              </p>
+              <p>
+                <strong>Tech Stack:</strong> Python · Z3 SMT · Scikit-learn · TensorFlow · DeepFace · Pandas · Matplotlib
+              </p>
+              <p>
+                <strong>Keywords:</strong> Responsible AI · Symbolic Verification · Fuzzy Logic · Multimodal Learning · Empathy Modeling
+              </p>
+            </div>
+          </details>
+
+          <a
+            href="https://github.com/ElleLynn08/trauma-informed-ai-framework.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
+            View on GitHub
+          </a>
+        </div>
+
         {/* Forks n' Filters */}
         <div className="project-card">
           <video className="project-video" controls>
@@ -20,6 +85,7 @@ function Work() {
           <p className="project-description">
             A recipe filtering platform built with Flask and React. Features dietary preference options, custom filtering, and Spoonacular API integration.
           </p>
+
           <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
@@ -33,12 +99,23 @@ function Work() {
               </ul>
               <p><strong>Challenges:</strong> Deployment on AWS failed—pivoted to Google Cloud Run successfully.</p>
               <p><strong>What I Learned:</strong> Resilience in solo dev, rapid deployment, container orchestration</p>
-              <a href="/documents/ForksNFilters_Report.pdf" target="_blank" rel="noopener noreferrer" className="btn-pdf">
+              <a
+                href="/documents/ForksNFilters_Report.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pdf"
+              >
                 View Final Report (PDF)
               </a>
             </div>
           </details>
-          <a href="https://github.com/ElleLynn08/forks-n-filters" target="_blank" rel="noopener noreferrer" className="btn-github">
+
+          <a
+            href="https://github.com/ElleLynn08/forks-n-filters"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
             View on GitHub
           </a>
         </div>
@@ -53,6 +130,7 @@ function Work() {
           <p className="project-description">
             A single-page weather app leveraging React and Flask with pattern implementation, forecasting insights, and easy navigation.
           </p>
+
           <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
@@ -72,12 +150,23 @@ function Work() {
                 <li>Web-based search history</li>
                 <li>Live deployment with full frontend</li>
               </ul>
-              <a href="/documents/AtmosphericWeather_FinalReport.pdf" target="_blank" rel="noopener noreferrer" className="btn-pdf">
+              <a
+                href="/documents/AtmosphericWeather_FinalReport.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pdf"
+              >
                 View Final Report (PDF)
               </a>
             </div>
           </details>
-          <a href="https://github.com/ElleLynn08/weather-app-final" target="_blank" rel="noopener noreferrer" className="btn-github">
+
+          <a
+            href="https://github.com/ElleLynn08/weather-app-final"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
             View on GitHub
           </a>
         </div>
@@ -92,11 +181,14 @@ function Work() {
           <p className="project-description">
             A full-stack online solitaire game built using MongoDB, Node.js, and JavaScript for backend logic and smooth gameplay.
           </p>
+
           <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
               <p>
-                Developed across multiple assignments using an agile process with video-based submissions. Includes full card move validation, backend game state tracking, and React-driven game logic. Game state stored in MongoDB.
+                Developed across multiple assignments using an agile process with video-based submissions.
+                Includes full card move validation, backend game state tracking, and React-driven game logic.
+                Game state stored in MongoDB.
               </p>
             </div>
           </details>
@@ -113,6 +205,7 @@ function Work() {
             A Responsible AI project using SHAP to reveal bias in fake vs. real news classification.
             Features custom topic flags, engineered features, and TF-IDF explainability.
           </p>
+
           <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
@@ -125,12 +218,23 @@ function Work() {
                 <li>Bias surfacing across political, religious, and emotional categories</li>
               </ul>
               <p><strong>What I Learned:</strong> How model predictions reflect not just accuracy, but assumptions — and how to interpret them responsibly.</p>
-              <a href="/documents/FakeNewsBias_Assignment6_7.pdf" target="_blank" rel="noopener noreferrer" className="btn-pdf">
+              <a
+                href="/documents/FakeNewsBias_Assignment6_7.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pdf"
+              >
                 View Final Report (PDF)
               </a>
             </div>
           </details>
-          <a href="https://github.com/ElleLynn08/fake-news-bias-audit" target="_blank" rel="noopener noreferrer" className="btn-github">
+
+          <a
+            href="https://github.com/ElleLynn08/fake-news-bias-audit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
             View on GitHub
           </a>
         </div>
@@ -145,6 +249,7 @@ function Work() {
           <p className="project-description">
             A WebGME-based modeling tool for creating Python turtle graphics visually. Includes code generation, plugin execution, and loop/logic design.
           </p>
+
           <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
@@ -159,18 +264,29 @@ function Work() {
               <p><strong>Challenges:</strong> Plugin sequencing, loop expansion, and state tracking across generated code.</p>
             </div>
           </details>
-          <a href="https://github.com/ElleLynn08/turtle-design-studio" target="_blank" rel="noopener noreferrer" className="btn-github">
+
+          <a
+            href="https://github.com/ElleLynn08/turtle-design-studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
             View on GitHub
           </a>
         </div>
 
         {/* Microservices Movie Recommender */}
         <div className="project-card">
-          <img className="project-image" src="images/microservices_test.png" alt="Microservices Recommender Test Output" />
+          <img
+            className="project-image"
+            src="images/microservices_test.png"
+            alt="Microservices Recommender Test Output"
+          />
           <h3 className="project-title">Parallel Movie Recommender</h3>
           <p className="project-description">
             An asynchronous microservice using Spring WebFlux and Project Reactor to deliver movie recommendations in parallel.
           </p>
+
           <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
@@ -187,23 +303,25 @@ function Work() {
           </details>
         </div>
 
-        {/* Coming Soon */}
+        {/* Coming Next */}
         <div className="project-card sparkle-card">
           <h3 className="project-title">
-            More Projects Coming Soon <span role="img" aria-label="sparkles">✨</span>
+            More Research Coming Soon <span role="img" aria-label="sparkles">✨</span>
           </h3>
           <p className="project-description">
-            I’m currently building a trauma-informed, multimodal AI framework to support safety, fairness, and emotional intelligence in high-stakes environments.  
+            Additional work expanding the Trauma-Aware AI Trilogy into runtime empathy monitoring and hybrid reasoning systems will be released in 2026.
             <br /><br />
-            This work will be submitted for publication in 2025 and 2026 and combines behavioral modeling, SMT verification, and explainability — stay tuned for the upcoming repo, demo, and research article.
+            Stay tuned for new repos, live demos, and the upcoming Responsible AI presentation series.
           </p>
         </div>
+
       </section>
     </main>
   );
 }
 
 export default Work;
+
 
 
 

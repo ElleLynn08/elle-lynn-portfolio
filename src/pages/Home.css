@@ -14,6 +14,24 @@
     max-width: 300px; /* Adjust width as needed */
     flex: 1 1 calc(33% - 2rem); /* Adjust for three cards in a row */
   }
+
+  .project-card a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.project-card a:hover {
+  color: #00eecd;
+  text-shadow: 0 0 8px rgba(0, 238, 205, 0.5);
+}
+
+
+  .project-card a:hover {
+  color: #00eecd;
+  text-decoration: underline;
+  text-decoration-color: #00eecd;
+  transition: all 0.3s ease;
+}
+
   @media (max-width: 768px) {
     .work-container,
     .about-container,
@@ -31,7 +49,99 @@
   
     .hero,
     .about-section {
-      padding-top: 40px !important; /* just in case */
+      padding-top: 40px !important; 
     }
+    
   }
-  
+  /* ===========================
+   Featured Research Section
+=========================== */
+.featured-research {
+  margin: 6rem auto 4rem;
+  max-width: 1000px;
+  text-align: left;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-in;
+}
+
+.featured-research h2 {
+  text-align: center;
+  color: var(--branding-color);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.featured-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.featured-image {
+  flex: 1;
+  max-width: 420px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.featured-text {
+  flex: 1;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.featured-text h3 {
+  color: #272142;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.btn-learn-more {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--branding-color);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  background-color: #005b4a;
+  transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .featured-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featured-text {
+    margin-top: 1.5rem;
+  }
+
+  .featured-image {
+    max-width: 90%;
+  }
+}

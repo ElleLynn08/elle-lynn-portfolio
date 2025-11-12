@@ -1,9 +1,10 @@
 # Elle Lynn – Portfolio Website 💻✨
 
-This is a personal developer portfolio built by Elle Lynn, a front-end engineer and current Computer Science graduate student at Vanderbilt University. This site showcases a selection of course-based and solo projects with a focus on user-centered design, ethical development, and scalable architecture.
+This is the personal developer portfolio of **Elle Lynn (Michelle Lynn George)** — a front-end engineer, AI researcher, and Computer Science graduate student at Vanderbilt University.  
 
-You can view the live portfolio here:  
-👉 [https://ellelynn.netlify.app](https://ellelynn.netlify.app)
+The site highlights Elle’s creative, ethical, and research-driven projects — from full-stack web apps to her trauma-informed AI research trilogy — built with empathy and precision.
+
+🔗 **Live Portfolio:** [https://ellelynn.netlify.app](https://ellelynn.netlify.app)
 
 ---
 
@@ -12,19 +13,24 @@ You can view the live portfolio here:
 - React
 - JavaScript (ES6+)
 - HTML5 & CSS3
-- Netlify (deployment)
-- GitHub (version control)
+- Netlify (Deployment)
+- GitHub (Version Control)
 
 ---
 
 ## 📁 Portfolio Highlights
 
 Each project card includes:
-- Video demos
-- Project descriptions
-- Click-to-expand details (tech stack, design patterns, challenges, future plans)
+- Video demos  
+- Detailed descriptions  
+- Expandable sections (Tech stack, design patterns, challenges, and future plans)
 
-Projects include full-stack builds, cloud-deployed apps, and AI-integrated solutions from Vanderbilt coursework and solo development.
+Projects span full-stack builds, cloud-deployed applications, and AI-integrated systems from Vanderbilt coursework and independent research.
+
+Featured projects include:
+- **Trauma-Aware AI Trilogy** — published on Zenodo (2025)  
+  - [The Haunting Problem: Recognizing Semantic Absence in Trauma-Aware AI](https://doi.org/10.5281/zenodo.17578153)  
+  - [Poster: The Haunting Problem — Recognizing Semantic Absence in Trauma-Aware AI](https://doi.org/10.5281/zenodo.17584658)
 
 ---
 
@@ -33,25 +39,11 @@ Projects include full-stack builds, cloud-deployed apps, and AI-integrated solut
 To clone and run this project:
 
 ```bash
-git clone https://github.com/ElleLynn08/elle-lynn-portfolio.git
+git clone git@github.com:ElleLynn08/elle-lynn-portfolio.git
 cd elle-lynn-portfolio
 npm install
 npm start
-```
 
-To build for production:
-
-```bash
-npm run build
-```
-
----
-
-## 🙋‍♀️ About Me
-
-I'm a front-end engineer with a creative soul, a curious mind, and a mission-driven heart. I build tools that don’t just work—they help. Let’s build something real.
-
----
 
 ## 📬 Contact
 
