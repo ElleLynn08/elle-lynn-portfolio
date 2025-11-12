@@ -50,7 +50,7 @@ npm start
 Want to collaborate or say hi?
 
 - ✉️ Email: [Elle.Lynn.Research@icloud.com](mailto:Elle.Lynn.Research@icloud.com)
-- 💼 LinkedIn: [linkedin.com/in/elle-lynn-a7a7a1263](https://www.linkedin.com/in/elle-lynn/)
+- 💼 LinkedIn: [linkedin.com/in/elle-lynn/](https://www.linkedin.com/in/elle-lynn/)
 - 🖥️ GitHub: [github.com/ElleLynn08](https://github.com/ElleLynn08)
 
 ---

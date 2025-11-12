@@ -29,7 +29,7 @@ function Footer() {
           <FontAwesomeIcon icon={faSquareGithub} size="2x" />
         </a>
         <a
-          href="https://www.linkedin.com/in/elle-lynn-a7a7a1263"
+          href="https://www.linkedin.com/in/elle-lynn/"
           target="_blank"
           rel="noopener noreferrer"
           title="LinkedIn"
