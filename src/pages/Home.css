@@ -3,13 +3,14 @@
 }
 
 /* ===========================
-   Project Section Layout 
+   Project Section Layout
 =========================== */
 .projects {
   text-align: center;
   margin: 4rem 0;
 }
 
+/* Final mobile-safe flex container */
 .project-cards {
   display: flex;
   justify-content: center;
@@ -18,10 +19,14 @@
   gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
-  overflow: visible;           /* fixes iOS white gap issue */
-  min-height: 200px;           /* ensures cards never collapse on mobile */
+  overflow: visible;              /* keeps visible on iOS */
+  min-height: 200px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
+/* Default: visible immediately (mobile-safe) */
 .project-card-wrapper {
   flex: 1 1 calc(33.333% - 2rem);
   max-width: 340px;
@@ -29,28 +34,53 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: stretch;        /* consistent height */
-  opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
-}
-
-.project-card-wrapper.in-view {
+  align-items: stretch;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
+  animation: cardFadeIn 0.8s ease-out both;
 }
 
-/* Gentle bounce pop */
+/* Subtle bounce in */
+@keyframes cardFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Desktop-only scroll fade */
+@media (min-width: 769px) {
+  .project-card-wrapper {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    animation: none;
+    transition: opacity 0.9s ease-out, transform 0.9s cubic-bezier(0.22, 1.28, 0.36, 1);
+  }
+  .project-card-wrapper.in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gentle pop on hover */
 .project-card-wrapper.in-view:hover {
   transform: scale(1.02);
   transition: transform 0.25s ease;
 }
 
-/* Project Links Hover Effect */
+/* Project Links Hover */
 .project-card a {
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
 .project-card a:hover {
   color: var(--accent-teal);
   text-shadow: 0 0 8px rgba(0, 238, 205, 0.5);
@@ -59,7 +89,7 @@
 }
 
 /* ===========================
-   Featured Research Section (Now Floating + Centered)
+   Featured Research Section
 =========================== */
 .featured-research {
   margin: 6rem auto 4rem;
@@ -105,7 +135,6 @@
   transform: scale(1.02);
   transition: transform 0.6s ease-in-out;
 }
-
 .featured-research.in-view .featured-image {
   transform: scale(1);
 }
@@ -116,7 +145,6 @@
   color: #444;
   line-height: 1.6;
 }
-
 .featured-text h3 {
   color: #272142;
   font-size: 1.5rem;
@@ -138,7 +166,6 @@
   font-weight: 600;
   transition: all 0.25s ease;
 }
-
 .btn-learn-more:hover {
   background: transparent;
   color: var(--accent-teal);
@@ -148,14 +175,13 @@
 }
 
 /* ===========================
-   Global Scroll Fade
+   Scroll Fade (shared)
 =========================== */
 .scroll-fade {
   opacity: 0;
   transform: translateY(40px);
   transition: all 1s ease-out;
 }
-
 .scroll-fade.in-view {
   opacity: 1;
   transform: translateY(0);
@@ -169,30 +195,22 @@
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
 .scroll-fade.in-view .scroll-stagger {
   opacity: 1;
   transform: translateY(0);
 }
-
-.delay-1 {
-  transition-delay: 0.3s;
-}
-.delay-2 {
-  transition-delay: 0.6s;
-}
+.delay-1 { transition-delay: 0.3s; }
+.delay-2 { transition-delay: 0.6s; }
 
 /* ===========================
    Responsive Layout
 =========================== */
 @media (max-width: 1200px) {
-  /* Switch to 2 across */
   .project-card-wrapper {
     flex: 1 1 calc(50% - 2rem);
     max-width: 480px;
   }
 }
-
 @media (max-width: 1024px) {
   .featured-research {
     text-align: center;
@@ -200,41 +218,35 @@
     margin: 4rem 1rem;
     max-width: 95%;
   }
-
   .featured-content {
     flex-direction: column;
     gap: 2rem;
   }
-
   .featured-image {
     max-width: 90%;
     height: auto;
     object-fit: contain;
   }
-
   .featured-text {
     margin-top: 1.5rem;
     max-width: 90%;
   }
 }
-
-/* Mobile */
 @media (max-width: 768px) {
   .project-card-wrapper {
     flex: 1 1 100%;
     max-width: 92%;
-    min-height: 400px;   /* ensures cards render fully on mobile */
+    min-height: 400px;      /* keeps visible on phones */
   }
-
   .projects {
     margin: 3rem 0 2rem;
   }
-
   .project-cards {
     gap: 1.5rem;
     overflow: visible;
   }
 }
+
 
 
 
