@@ -11,10 +11,12 @@ function Home() {
 
     if (isMobile || isIOS) {
       // --- Force instant visibility for mobile/iOS ---
-      document.querySelectorAll(".scroll-fade, .project-card-wrapper").forEach((el) => {
-        el.classList.add("force-visible");
-        el.classList.add("in-view");
-      });
+      document
+        .querySelectorAll(".scroll-fade, .project-card-wrapper")
+        .forEach((el) => {
+          el.classList.add("force-visible");
+          el.classList.add("in-view");
+        });
       return; // Skip observer entirely
     }
 
@@ -43,52 +45,60 @@ function Home() {
       <Hero />
       <Skills />
 
+      {/* =========================
+          FEATURED RESEARCH SECTION
+      ========================== */}
       <section className="featured-research scroll-fade">
         <h2>Featured Research</h2>
+
         <div className="featured-content">
           <img
-            src="images/poster_haunting_problem.png"
-            alt="Poster of The Haunting Problem — first paper in the Trauma-Aware AI Trilogy"
+            src="images/TrilogyArc.png"
+            alt="Visual arc showing the full Trauma-Aware AI Trilogy: The Haunting Problem, Empathy as Verification, and Recognizing the Unseen"
             className="featured-image"
           />
+
           <div className="featured-text scroll-stagger delay-1">
             <h3>Trauma-Aware AI Trilogy</h3>
+
             <p>
-              A trauma-informed, multimodal AI framework that bridges behavioral
-              modeling, symbolic verification, and explainable AI to advance
-              emotional safety and fairness in high-stakes environments.
+              A verified, trauma-informed AI framework spanning three research
+              phases — <em>The Haunting Problem</em>,{" "}
+              <em>Empathy as Verification</em>, and{" "}
+              <em>Recognizing the Unseen</em>. Together, these works introduce a
+              multimodal, symbolic, and ethically grounded approach to detecting
+              emotional suppression, dissociation, and guarded affect in machine
+              learning systems.
             </p>
+
             <p>
-              <strong>Published so far:</strong>
+              <strong>Published on Zenodo:</strong>
               <br />
-              •{" "}
-              <em>
-                The Haunting Problem: Recognizing Semantic Absence in
-                Trauma-Aware AI
-              </em>{" "}
-              —{" "}
+              <a
+                href="https://doi.org/10.5281/zenodo.17705532"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Recognizing the Unseen
+              </a>{" "}
+              ·{" "}
+              <a
+                href="https://doi.org/10.5281/zenodo.17639714"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Empathy as Verification
+              </a>{" "}
+              ·{" "}
               <a
                 href="https://doi.org/10.5281/zenodo.17578153"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Zenodo DOI 10.5281/zenodo.17578153
-              </a>
-              <br />
-              •{" "}
-              <em>
-                Poster: The Haunting Problem — Recognizing Semantic Absence in
-                Trauma-Aware AI
-              </em>{" "}
-              —{" "}
-              <a
-                href="https://doi.org/10.5281/zenodo.17584658"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Zenodo DOI 10.5281/zenodo.17584658
+                The Haunting Problem
               </a>
             </p>
+
             <a href="/work" className="btn-learn-more scroll-stagger delay-2">
               Explore the Trilogy
             </a>
@@ -96,66 +106,84 @@ function Home() {
         </div>
       </section>
 
+      {/* =========================
+          PROJECTS SECTION
+      ========================== */}
       <section className="projects scroll-fade">
         <h2>My Projects</h2>
+
         <div className="project-cards">
-          {[
-            {
-              title: "Fake News Bias Audit",
-              description:
-                "A Responsible AI project using SHAP to detect political and linguistic bias in fake news classification. Includes TF-IDF, topic flags, and custom SHAP visualizations.",
-              image: "images/fake_news_audit.png",
-              link: "/work#fake-news-bias",
-            },
-            {
-              title: "Turtle Graphics Design Studio",
-              description:
-                "A metamodel-based visual coding environment built in WebGME. Features plugin-based code generation, import/export logic, and custom loop handling for Python turtle graphics.",
-              image: "images/turtle_graphics.png",
-              link: "/work#turtle-studio",
-            },
-            {
-              title: "Microservices Movie Recommender",
-              description:
-                "A high-performance Spring WebFlux microservice using ParallelFlux and reactive programming to recommend movies asynchronously.",
-              image: "images/microservices_test.png",
-              link: "/work#microservices",
-            },
-            {
-              title: "Forks n' Filters",
-              description:
-                "A recipe filtering platform built with Flask and React. Features dietary preference options, custom filtering, and API integration.",
-              image: "images/forks_n_filters.png",
-              link: "/work#forks-n-filters",
-            },
-            {
-              title: "Atmospheric Weather App",
-              description:
-                "A single-page weather app leveraging React and Flask with pattern implementation, forecasting insights, and easy navigation.",
-              image: "images/atmospheric_weather.png",
-              link: "/work#weather-app",
-            },
-            {
-              title: "Solitaire Game",
-              description:
-                "A full-stack online solitaire game built using MongoDB, Node.js, and JavaScript for backend logic and smooth gameplay.",
-              image: "images/solitaire.png",
-              link: "/work#solitaire",
-            },
-          ].map((proj, i) => (
-            <div
-              className="scroll-fade project-card-wrapper"
-              style={{ transitionDelay: `${i * 0.15}s` }}
-              key={proj.title}
-            >
-              <ProjectCard
-                title={proj.title}
-                description={proj.description}
-                image={proj.image}
-                link={proj.link}
-              />
-            </div>
-          ))}
+          <div
+            className="scroll-fade project-card-wrapper"
+            style={{ transitionDelay: "0s" }}
+          >
+            <ProjectCard
+              title="Fake News Bias Audit"
+              description="A Responsible AI project using SHAP to detect political and linguistic bias in fake news classification. Includes TF-IDF, topic flags, and custom SHAP visualizations."
+              image="images/fake_news_audit.png"
+              link="/work#fake-news-bias"
+            />
+          </div>
+
+          <div
+            className="scroll-fade project-card-wrapper"
+            style={{ transitionDelay: "0.15s" }}
+          >
+            <ProjectCard
+              title="Turtle Graphics Design Studio"
+              description="A metamodel-based visual coding environment built in WebGME. Features plugin-based code generation, import/export logic, and custom loop handling for Python turtle graphics."
+              image="images/turtle_graphics.png"
+              link="/work#turtle-studio"
+            />
+          </div>
+
+          <div
+            className="scroll-fade project-card-wrapper"
+            style={{ transitionDelay: "0.3s" }}
+          >
+            <ProjectCard
+              title="Microservices Movie Recommender"
+              description="A high-performance Spring WebFlux microservice using ParallelFlux and reactive programming to recommend movies asynchronously."
+              image="images/microservices_test.png"
+              link="/work#microservices"
+            />
+          </div>
+
+          <div
+            className="scroll-fade project-card-wrapper"
+            style={{ transitionDelay: "0.45s" }}
+          >
+            <ProjectCard
+              title="Forks n' Filters"
+              description="A recipe filtering platform built with Flask and React. Features dietary preference options, custom filtering, and API integration."
+              image="images/forks_n_filters.png"
+              link="/work#forks-n-filters"
+            />
+          </div>
+
+          <div
+            className="scroll-fade project-card-wrapper"
+            style={{ transitionDelay: "0.6s" }}
+          >
+            <ProjectCard
+              title="Atmospheric Weather App"
+              description="A single-page weather app leveraging React and Flask with pattern implementation, forecasting insights, and easy navigation."
+              image="images/atmospheric_weather.png"
+              link="/work#weather-app"
+            />
+          </div>
+
+          <div
+            className="scroll-fade project-card-wrapper"
+            style={{ transitionDelay: "0.75s" }}
+          >
+            <ProjectCard
+              title="Solitaire Game"
+              description="A full-stack online solitaire game built using MongoDB, Node.js, and JavaScript for backend logic and smooth gameplay."
+              image="images/solitaire.png"
+              link="/work#solitaire"
+            />
+          </div>
         </div>
       </section>
     </main>
@@ -163,15 +191,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
-
-
-
-
-
-
-
-
-

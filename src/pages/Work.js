@@ -1,5 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Work.css";
+
+// ===== Carousel slides for Trauma-Aware AI Trilogy =====
+const trilogySlides = [
+  {
+    src: "images/TrilogyArc.png",
+    alt: "Overview of the Trauma-Aware AI Trilogy across three phases."
+  },
+  {
+    src: "images/poster_haunting_problem.png",
+    alt: "Published poster for The Haunting Problem, the first verified phase of the trilogy."
+  },
+  {
+    src: "images/FuzzyConfidence.png",
+    alt: "Fuzzy confidence distribution with reflective, cautious, and assertive thresholds."
+  },
+  {
+    src: "images/verificationSurface.png",
+    alt: "Empathy rule satisfiability surface and symbolic verification boundary."
+  },
+  {
+    src: "images/Top10Rules.png",
+    alt: "Top 10 triggered empathy rules for the DAIC-WOZ dataset."
+  },
+  {
+    src: "images/RuleActivationMatrix.png",
+    alt: "Symbolic rule activation matrix for all 25 empathy rules."
+  }
+];
+
+// ===== Simple image carousel used only on the Trilogy card =====
+function ImageCarousel({ slides }) {
+  const [index, setIndex] = useState(0);
+
+  if (!slides || slides.length === 0) return null;
+
+  const prevSlide = () => {
+    setIndex((current) =>
+      current === 0 ? slides.length - 1 : current - 1
+    );
+  };
+
+  const nextSlide = () => {
+    setIndex((current) =>
+      current === slides.length - 1 ? 0 : current + 1
+    );
+  };
+
+  const slide = slides[index];
+
+  return (
+    <div className="carousel">
+      <div className="carousel-image-wrapper">
+        <img
+          className="carousel-image"
+          src={slide.src}
+          alt={slide.alt}
+        />
+      </div>
+
+      <div className="carousel-controls">
+        <button
+          type="button"
+          className="carousel-arrow"
+          onClick={prevSlide}
+          aria-label="Previous slide"
+        >
+          ‹
+        </button>
+        <span className="carousel-indicator">
+          {index + 1} / {slides.length}
+        </span>
+        <button
+          type="button"
+          className="carousel-arrow"
+          onClick={nextSlide}
+          aria-label="Next slide"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function Work() {
   return (
@@ -13,12 +96,8 @@ function Work() {
 
         {/* Trauma-Aware AI Trilogy */}
         <div className="project-card">
-          <img
-            className="project-image"
-            src="images/poster_haunting_problem.png"
-            alt="Published poster introducing The Haunting Problem — the first verified phase of the Trauma-Aware AI Trilogy."
-            title="Published poster introducing The Haunting Problem — the first verified phase of the Trauma-Aware AI Trilogy."
-          />
+          <ImageCarousel slides={trilogySlides} />
+
           <h3 className="project-title">Trauma-Aware AI Trilogy</h3>
           <p className="project-description">
             A trauma-informed, multimodal AI framework uniting behavioral modeling, symbolic verification, and explainable AI to
@@ -29,35 +108,66 @@ function Work() {
             <summary className="read-more">More Details</summary>
             <div className="details-body">
               <p>
-                <strong>Overview:</strong> This ongoing trilogy formalizes empathy as a verifiable safety property in AI systems.
-                It integrates multimodal datasets (text, audio, and microexpressions) with fuzzy-logic calibration and Z3 symbolic verification.
+                <strong>Overview:</strong> The completed Trauma-Aware AI Trilogy formalizes empathy as a verifiable safety
+                property in AI systems. It integrates multimodal datasets (text, audio, and video microexpressions) with fuzzy
+                confidence calibration and Z3-based symbolic verification to detect suppression, dissociation, and guarded
+                affect in a trauma-informed way.
               </p>
+
               <p>
-                <strong>Published so far:</strong><br />
-                • <em>The Haunting Problem: Recognizing Semantic Absence in Trauma-Aware AI</em> —
+                <strong>Publications (Zenodo, 2025):</strong><br />
+                • <em>Recognizing the Unseen: A Verified, Multimodal Framework for Trauma-Informed AI</em> —{" "}
+                <a
+                  href="https://doi.org/10.5281/zenodo.17705532"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://doi.org/10.5281/zenodo.17705532
+                </a>
+                <br />
+                • <em>Empathy as Verification: Formalizing Emotional Safety through Symbolic Logic</em> —{" "}
+                <a
+                  href="https://doi.org/10.5281/zenodo.17639714"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://doi.org/10.5281/zenodo.17639714
+                </a>
+                <br />
+                • <em>The Haunting Problem: Recognizing Semantic Absence in Trauma-Aware AI</em> —{" "}
                 <a
                   href="https://doi.org/10.5281/zenodo.17578153"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {" "}Zenodo DOI 10.5281/zenodo.17578153
-                </a><br />
-                • <em>Poster: The Haunting Problem — Recognizing Semantic Absence in Trauma-Aware AI</em> —
+                  https://doi.org/10.5281/zenodo.17578153
+                </a>
+              </p>
+
+              <p>
+                <strong>Datasets & Artifacts:</strong><br />
+                • <em>Trauma-Aware AI Noise Robustness Dataset</em> —{" "}
+                <a
+                  href="https://doi.org/10.5281/zenodo.17620950"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://doi.org/10.5281/zenodo.17620950
+                </a>
+                <br />
+                • <em>Poster: The Haunting Problem — Recognizing Semantic Absence in Trauma-Aware AI</em> —{" "}
                 <a
                   href="https://doi.org/10.5281/zenodo.17584658"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {" "}Zenodo DOI 10.5281/zenodo.17584658
+                  https://doi.org/10.5281/zenodo.17584658
                 </a>
               </p>
+
               <p>
-                <strong>In Progress:</strong><br />
-                • <em>Recognizing the Unseen: A Verified, Multimodal Framework for Trauma-Informed AI</em><br />
-                • <em>Empathy as Verification: Formalizing Emotional Safety through Symbolic Logic</em>
-              </p>
-              <p>
-                <strong>Tech Stack:</strong> Python · Z3 SMT · Scikit-learn · TensorFlow · DeepFace · Pandas · Matplotlib
+                <strong>Tech Stack:</strong> Tech Stack: Python · Z3 SMT · Scikit-learn · Pandas · Matplotlib · DeepFace (TensorFlow backend)
+
               </p>
               <p>
                 <strong>Keywords:</strong> Responsible AI · Symbolic Verification · Fuzzy Logic · Multimodal Learning · Empathy Modeling
@@ -131,7 +241,7 @@ function Work() {
             A single-page weather app leveraging React and Flask with pattern implementation, forecasting insights, and easy navigation.
           </p>
 
-          <details>
+        <details>
             <summary className="read-more">More Details</summary>
             <div className="details-body">
               <p><strong>Motivation:</strong> Inspired by my years in aviation and the challenges of navigating time zones and units across countries.</p>
@@ -321,6 +431,8 @@ function Work() {
 }
 
 export default Work;
+
+
 
 
 
