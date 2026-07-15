@@ -13,7 +13,7 @@ function Contact() {
       </p>
 
       <p className="signature-typewriter">
-        <em>Curiosity is where every meaningful solution begins.</em>
+        <em>Curiosity is where meaningful solutions begin.</em>
       </p>
     </div>
   );
