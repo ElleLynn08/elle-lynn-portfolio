@@ -13,7 +13,11 @@ function Footer() {
           <p className="text-muted">Let's work together</p>
         </div>
         <div>
-          <a href="/contact" title="Go to Contact Page" className="btn btn-branding">
+          <a
+            href="/contact"
+            title="Go to Contact Page"
+            className="btn btn-branding"
+          >
             Contact me
           </a>
         </div>
@@ -47,8 +51,14 @@ function Footer() {
 
       <p className="text-center">
         This portfolio was coded with{" "}
-        <span role="img" aria-label="black heart">🖤</span> and a bit of{" "}
-        <span role="img" aria-label="sparkles">✨</span> by <b>Elle Lynn</b>, and is{" "}
+        <span role="img" aria-label="black heart">
+          🖤
+        </span>{" "}
+        and a bit of{" "}
+        <span role="img" aria-label="sparkles">
+          ✨
+        </span>{" "}
+        by <b>Elle Lynn</b>, and is{" "}
         <a
           href="https://github.com/ElleLynn08/elle-lynn-portfolio"
           target="_blank"
@@ -64,7 +74,8 @@ function Footer() {
       </p>
 
       <p className="text-center small-text">
-        © {new Date().getFullYear()} Elle Lynn. All Rights Reserved. Michelle Lynn George.
+        © {new Date().getFullYear()} Michelle Lynn George (Elle Lynn). All
+        rights reserved.
       </p>
     </footer>
   );
