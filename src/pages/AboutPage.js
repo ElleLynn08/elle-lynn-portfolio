@@ -5,41 +5,51 @@ function About() {
   return (
     <div className="about-container">
       <div className="about-text">
-        <h1 className="mb-4">Hi, I’m Elle</h1>
+        <h1 className="mb-4">Hi, I'm Elle</h1>
+
         <h2 className="mb-4">
-          Trauma-Informed AI Researcher | Builder of Ethical, Human-Aware Systems
+          Technology Operations • Systems Thinking • Human-Centered Design
         </h2>
 
         <p className="mb-4">
-          My journey began as a front-end developer who loved designing intuitive,
-          beautiful user interfaces. But over time, I realized I was drawn to deeper
-          questions—ones about trust, fairness, and the unseen dynamics that shape
-          human–AI interaction.
+          I enjoy solving complex problems where technology, operations, and
+          people intersect. My background spans federal operations, executive
+          leadership support, UX/UI design, and graduate research in computer
+          science, giving me a unique perspective on how thoughtful systems can
+          improve both organizations and the people they serve.
         </p>
 
         <p className="mb-4">
-          Now, I'm focused on building trauma-informed AI systems that don’t just
-          classify data—they care about the people behind it. My research explores
-          how machine learning can recognize emotional states, respond with context
-          awareness, and uphold fairness in high-stakes, real-world environments.
+          After earning my Master of Science in Computer Science from Vanderbilt
+          University, I became increasingly fascinated by emerging
+          technologies—not just artificial intelligence, but also the broader
+          technologies and systems shaping our future. Whether exploring
+          human-centered AI, imaging systems, photonics, quantum technologies,
+          or technology operations, I'm driven by curiosity and a desire to
+          understand how seemingly different disciplines connect to solve
+          meaningful challenges.
         </p>
 
         <p className="mb-4">
-          I'm currently earning my Master’s in Computer Science at Vanderbilt,
-          where I’ve studied Responsible AI, cloud-native computing, microservices,
-          behavioral modeling, and ethical tech development. My background includes
-          federal service, and I’m especially passionate about creating tools that
-          serve public safety, mental health, and ethical innovation.
+          Throughout my career, I've worked in environments where trust,
+          adaptability, and sound judgment matter. I enjoy learning quickly,
+          collaborating across disciplines, translating complex technical ideas
+          into practical solutions, and continuously improving the systems and
+          processes that help people succeed.
         </p>
 
         <p className="mb-5">
-          Whether I’m designing systems, conducting research, or collaborating across
-          disciplines, I bring empathy, clarity, and a mission-driven heart to
-          everything I build.
+          Whether I'm supporting mission-focused organizations, exploring
+          emerging technologies, or designing better user experiences, my goal
+          remains the same: to combine curiosity, empathy, and analytical
+          thinking to make complicated things a little clearer—and a little
+          better.
         </p>
 
         <p className="mb-5">
-          If you believe technology should heal—not just work—I’d love to connect.
+          If you're looking for someone who loves learning, enjoys connecting
+          ideas across disciplines, and isn't afraid to ask thoughtful
+          questions, I'd love to connect.
         </p>
 
         <a className="btn-branding" href="/work" title="See My Projects">
@@ -59,9 +69,3 @@ function About() {
 }
 
 export default About;
-
-
-
-
-
-
