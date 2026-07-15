@@ -37,7 +37,7 @@ function Footer() {
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
         <a
-          href="mailto:Elle.Lynn.Research@icloud.com"
+          href="mailto:Lynn_Elle_Tech@icloud.com"
           rel="noopener noreferrer"
           title="Email"
         >
@@ -71,9 +71,3 @@ function Footer() {
 }
 
 export default Footer;
-
-
-
-
-
-
